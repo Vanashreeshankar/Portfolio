@@ -8,8 +8,10 @@ const contactRoute = require('./route/contacts'); // Make sure the path is corre
 const app = express();
 
 app.use(cors({
-    credentials: true,
-    origin: ['http://localhost:4200', 'http://127.0.0.1:4200']
+  origin: 'https://vanashree-portfolio-website.vercel.app', // Frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.urlencoded({ extended: true }));
