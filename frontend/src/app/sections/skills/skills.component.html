@@ -1,0 +1,58 @@
+<div class="skill-container">
+    <div class="button-group">
+      <button (click)="selectSkill('coding')" [class.active]="selectedSkill === 'coding'">Coding Skill</button>
+      <button (click)="selectSkill('soft')" [class.active]="selectedSkill === 'soft'">Soft Skill</button>
+      <button (click)="selectSkill('MicroSoft')" [class.active]="selectedSkill === 'MicroSoft'">Microsoft Skill</button>
+    </div>
+    <div class="skill-list">
+      <div *ngIf="selectedSkill === 'coding'">
+        <div *ngFor="let skill of codingSkills" class="center">
+          <div class="profile-image">
+            <div class="card">
+              <div class="square front">
+                <img [src]="skill.svgPath" alt="{{skill.name}} logo" class="icon">
+                <p>{{skill.description}}</p>
+              </div>
+              <div class="square back">
+                <img [src]="skill.svgPath" alt="{{skill.name}} logo" class="icon">
+                <p>{{skill.name}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="selectedSkill === 'soft'">
+        <div *ngFor="let skill of softSkills" class="center">
+          <div class="profile-image" >
+            <div class="card">
+              <div class="square front">
+                <img [src]="skill.svgPath" alt="{{skill.name}} logo" class="icon">
+                <p>{{skill.description}}</p>
+              </div>
+              <div class="square back">
+                <img [src]="skill.svgPath" alt="{{skill.name}} logo" class="icon">
+                <p>{{skill.name}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="selectedSkill === 'MicroSoft'">
+        <div *ngFor="let skill of microSoftSkills" class="center">
+          <div class="profile-image">
+            <div class="card">
+              <div class="square front">
+                <img [src]="skill.svgPath" alt="{{skill.name}} logo" class="icon">
+                <p>{{skill.description}}</p>
+              </div>
+              <div class="square back">
+                <img [src]="skill.svgPath" alt="{{skill.name}} logo" class="icon">
+                <p>{{skill.name}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

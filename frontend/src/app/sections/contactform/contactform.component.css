@@ -1,0 +1,135 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Full width for all form components */
+.full-width {
+  width: 100%;
+}
+
+/* Hides the scrollbar for the overflow content, but allows scrolling */
+.overflow::-webkit-scrollbar {
+  display: none;
+}
+
+/* Main form styling */
+.contact-form {
+  width: 100%; /* Ensures form takes full width of parent container */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background color for the dialog content area */
+.mat-dialog-content {
+  padding: 0; /* Remove internal padding */
+  background-color: #DABC94 !important; /* Custom color */
+  max-height: 300px; /* Default max height for scroll */
+  overflow-y: auto; /* Allows scrolling on overflow */
+}
+
+/* Styling for action buttons container */
+mat-dialog-actions {
+  display: flex;
+  justify-content: space-evenly; /* Ensures buttons are evenly spaced */
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+/* Button styling */
+button {
+  min-width: 100px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #8B4513; /* Brown color */
+  color: white !important;
+  border: none;
+  flex: 1; /* Equal width */
+  margin: 0 4px; /* Consistent margin */
+}
+
+button:enabled {
+  background-color: #8B4513; /* Consistent with the normal state */
+}
+
+button:disabled {
+  background-color: #b99a72; /* Lighter brown when disabled */
+  color: #2c0808;
+}
+
+button:hover {
+  background-color: #644334; /* Darker brown on hover */
+}
+
+/* Form fields styling */
+mat-form-field {
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+/* Custom styles for focus, caret color, and labels within mat-form-fields */
+::ng-deep .mdc-text-field--focused .mdc-notched-outline > * {
+  border-color: #A0522D !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-input-element {
+  caret-color: brown !important;
+}
+
+::ng-deep .mat-mdc-form-field-flex.mat-mdc-form-field-label-wrapper {
+  color: #A0522D !important;
+}
+
+::ng-deep .mat-mdc-floating-label {
+  color: #A0522D !important;
+}
+
+::ng-deep .mat-mdc-form-field-label {
+  color: #A0522D !important;
+}
+
+.mat-mdc-dialog-title{
+  color: #8B4513;
+}
+
+/* Responsive adjustments */
+@media screen and (min-width: 1024px) {
+  .mat-dialog-content {
+    max-height: 400px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .mat-dialog-content {
+    max-height: 450px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .contact-form {
+    padding: 8px;  /* Sufficient padding around the form */
+  }
+
+  mat-dialog-actions {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: stretch; /* Stretch buttons to take full width */
+    padding: 0; /* Remove padding to utilize all space */
+    margin-top: 10px; /* Add some space above the button area */
+  }
+
+  button {
+    width: 100%; /* Full width for each button */
+    margin-bottom: 5px; /* Space between buttons */
+    padding: 8px 0; /* Adequate vertical padding for better tap targets */
+    font-size: 14px; /* Legible font size */
+  }
+
+  mat-form-field {
+    margin-bottom: 5px; /* Reducing the margin to save space */
+  }
+}
+

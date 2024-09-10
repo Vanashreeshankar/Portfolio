@@ -1,0 +1,187 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #AB7E4C; /* Brown background */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the header stays above other elements */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for better visibility */
+}
+
+.name {
+  font-size: 1.5em;
+  /*font-weight: bold;*/
+  color: #ffffff; /* White text */
+}
+
+.menu-button {
+  display: none; /* Hidden by default, shown on smaller screens */
+  color: #ffffff; /* White icon */
+}
+
+.menu-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.center-links {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-links a {
+  margin: 0 10px;
+  text-transform: none;
+  font-size: 0.8em;
+  color: #ffffff; /* White text */
+}
+
+.right-icons {
+  display: flex;
+  align-items: center;
+}
+
+.right-icons a {
+  margin: 0 10px; /* Reduced margin to decrease the gap between icons */
+  padding: 0;
+  min-width: unset; /* Remove default min-width applied by mat-button */
+}
+
+.right-icons img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1); /* Make the icons white */
+}
+
+mat-toolbar-row, .center-links a:hover, .right-icons a:hover {
+  color: #ffffff; /* Keep text white on hover */
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-button {
+    display: block;
+    position: absolute;
+    right: 10px;
+  }
+
+  .menu-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #AB7E4C; /* Brown background */
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+  }
+
+  .menu-content.hidden {
+    display: none !important;
+  }
+
+  .menu-content:not(.hidden) {
+    display: flex !important; /* Show the content when toggled */
+  }
+
+  .center-links {
+    flex-direction: column;
+    align-items: flex-end;
+    width: auto; /* Only occupy necessary width */
+  }
+
+  .center-links a {
+    margin: 5px 0;
+    text-align: right; /* Align text to the right */
+    width: 100%;
+  }
+
+  .right-icons {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 5px;
+    width: auto;
+  }
+
+  .right-icons img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px; /* Adjusted to keep consistent spacing */
+    filter: brightness(0) invert(1); /* Make the icons white */
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .menu-button {
+    display: none;
+  }
+
+  .menu-content {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .menu-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 60px; /* Adjust the top position below the menu button */
+    right: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #AB7E4C; /* Brown background */
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it appears above other elements */
+    max-width: 80%; /* Adjust the width to fit within the screen */
+  }
+
+  .menu-button:active + .menu-content,
+  .menu-button:focus + .menu-content {
+    display: flex; /* Show the menu content when toggled */
+  }
+
+  .center-links {
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 10px; /* Add spacing between sections */
+  }
+
+  .center-links a {
+    margin: 5px 0;
+    text-align: right;
+    width: 100%;
+  }
+
+  .right-icons {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 10px; /* Add spacing between icons */
+    width: 100%;
+  }
+
+  .right-icons img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    filter: brightness(0) invert(1); /* Make the icons white */
+  }
+}

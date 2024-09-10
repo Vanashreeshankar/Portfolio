@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <span class="name">Vanashree</span>
+  
+  <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  
+  <div class="menu-content" [class.hidden]="menuHidden">
+    <div class="center-links">
+      <a mat-button href="#profile">Profile</a>
+      <a mat-button href="#qualification">Qualification</a>
+      <a mat-button href="#skills">Skills</a>
+      <a mat-button href="#project">Project</a>
+    </div>
+  
+    <div class="right-icons">
+      <a mat-button href="assets/patterns.txt" target="_blank" matTooltip="Resume">
+        <img src="assets/logo/file.svg" alt="Resume" />
+      </a>
+      <a mat-button (click)="openContactDialog()" matTooltip="Contact Form">
+        <img src="assets/logo/contact-mail.1024x769.png" alt="Contact Form" />
+      </a>
+      <a mat-button href="https://www.linkedin.com/in/vanashree-69a303199" target="_blank" matTooltip="LinkedIn">
+        <img src="assets/logo/linkedin-in.1024x1024.png" alt="LinkedIn" />
+      </a>
+      <a mat-button href="https://github.com/Vanashreeshankar" target="_blank" matTooltip="GitHub">
+        <img src="assets/logo/github.1024x999.png" alt="GitHub" />
+      </a>
+    </div>
+    
+  </div>
+</mat-toolbar>

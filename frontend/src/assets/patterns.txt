@@ -1,0 +1,139 @@
+<div class="skill-container">
+    <div class="button-group">
+        <button (click)="selectSkill('coding')" [class.active]="selectedSkill === 'coding'">Coding Skill</button>
+        <button (click)="selectSkill('soft')" [class.active]="selectedSkill === 'soft'">Soft Skill</button>
+        <button (click)="selectSkill('MicroSoft')" [class.active]="selectedSkill === 'MicroSoft'">Microsoft Skill</button>
+    </div>
+    <div class="skill-list">
+        <div *ngIf="selectedSkill === 'coding'">
+            <div *ngFor="let skill of codingSkills" class="center">
+                <div class="profile-image">
+                    <div class="square front">
+                        <img [src]="skill.svgPath" alt="{{skill.name}} logo" class="icon">
+                        <p>{{skill.name}}</p>
+                    </div>
+                    <div class="square bottom">
+                        <div class="pattern"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="selectedSkill === 'soft'">
+            <div *ngFor="let skill of softSkills" class="center">
+                <div class="profile-image">
+                    <div class="square front">
+                        <img [src]="skill.svgPath" alt="{{skill.name}} logo" class="icon">
+                        <p>{{skill.name}}</p>
+                    </div>
+                    <div class="square bottom">
+                        <div class="pattern"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="selectedSkill === 'MicroSoft'">
+            <div *ngFor="let skill of MicroSoftSkills" class="center">
+                <div class="profile-image">
+                    <div class="square front">
+                        <img [src]="skill.svgPath" alt="{{skill.name}} logo" class="icon">
+                        <p>{{skill.name}}</p>
+                    </div>
+                    <div class="square bottom">
+                        <div class="pattern"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+css
+.skill-container {
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.button-group button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.skill-list .center {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.profile-image {
+    position: relative;
+    width: 250px;
+    height: 250px;
+}
+
+.square {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+.front {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    z-index: 2;
+    border: 2px solid #ff4081;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.front .icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.front p {
+    margin-top: auto;
+    margin-left: 10px;
+}
+
+.bottom {
+    top: 50px;
+    left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+    background: transparent;
+}
+
+.bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#7a1b14 2px, transparent 2px);
+    background-size: 15px 15px;
+}

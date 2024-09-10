@@ -1,0 +1,256 @@
+.skill-container {
+    text-align: center;
+    background-color: #DABC94; /* Background color */
+    padding: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #8B4513; /* Brown button color */
+    color: white;
+    border-radius: 50px; /* Curved button ends */
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button-group :hover{
+    background-color: #5A2D0C; /* Darker brown for active button */
+    color: #FFFFFF; /* White text */
+}
+
+.skill-list .center {
+    display: inline-block;
+    margin: 10px;
+    text-align: start;
+    perspective: 1000px; /* Enable 3D effect */
+}
+
+.profile-image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #8B4513; /* Brown border */
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.profile-image:hover {
+    transform: scale(1.1) rotateY(180deg); /* Toggle effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.square {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    background-color: #FFF8E7; /* Soft white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    backface-visibility: hidden; /* Hide the back when not visible */
+}
+
+.front {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    z-index: 2;
+    padding: 10px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+
+.front .icon{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+    filter: invert(28%) sepia(45%) saturate(1500%) hue-rotate(5deg) brightness(91%) contrast(95%);
+    /* This filter now applies a brown color matching #5A2D0C */
+}
+
+.front p {
+    margin-top: auto;
+    margin-left: 10px;
+    color: #8B4513; /* Brown text color */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Add CSS for the back side of the card if needed */
+
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background-color: #EED5B7; 
+    display: flex;
+    flex-direction: column; /* Stacks the elements vertically */
+    align-items: center; /* Centers the content horizontally */
+    padding: 10px; /* Add padding to match the front side */
+}
+
+.back .icon {
+    width: 40px; /* Same width as the front side */
+    height: 40px; /* Same height as the front side */
+    position: absolute; /* Use absolute positioning */
+    top: 10px; /* Position the icon at the top */
+    right: 10px; /* Position the icon at the left */
+    transform: rotateY(180deg); /* Corrects the mirroring */
+    filter: invert(28%) sepia(45%) saturate(1500%) hue-rotate(5deg) brightness(91%) contrast(95%);
+    /* Apply the same filter to match the front side */
+}
+
+.back p {
+    margin-top: auto; /* Pushes the <p> tag to the bottom */
+    text-align: center; /* Centers the text horizontally */
+    transform: rotateY(180deg); /* Corrects the mirroring */
+    font-weight: bold;
+    color: #8B4513; /* Brown text color */
+    margin-bottom: 20px; /* Adds space below the text */
+    line-height: 1.5; /* Adjust line height for better readability */
+    width: 100%; /* Ensures the text takes the full width */
+}
+
+
+
+.profile-image:hover .front {
+    transform: rotateY(180deg);
+  }
+  
+  .profile-image:hover .back {
+    transform: rotateY(0deg);
+  }
+
+
+/* Smaller screen styling */
+@media (max-width: 768px) {
+
+    .button-group button {
+        padding: 8px 15px;
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .square {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+    }
+
+    .front .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .front p {
+        font-size: 12px;
+    }
+
+    .back .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .back p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .button-group button {
+        padding: 6px 12px;
+        margin: 0 6px;
+        font-size: 12px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .square {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+    }
+
+    .front .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .front p {
+        font-size: 10px;
+    }
+
+    .back .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .back p {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 540px) {
+
+    .button-group button {
+        padding: 5px 10px;
+        margin: 0 5px;
+        font-size: 10px;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .square {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .front .icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .front p {
+        font-size: 8px;
+        margin-top: 25px;
+        text-align: left;
+        white-space: normal; /* Ensure text wraps */
+        word-wrap: break-word; /* Ensure long words are wrapped */
+    }
+
+    .back .icon {
+        width: 15px;
+        height: 15px;
+    }
+}

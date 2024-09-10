@@ -1,0 +1,128 @@
+/* Existing styles */
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 40px;
+  flex-wrap: nowrap; /* Ensure the square and profile-card are always adjacent */
+  background-color: #DABC94;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.profile-image {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.square {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+ 
+}
+
+.front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: invert(45%) sepia(60%) saturate(350%) hue-rotate(-15deg) brightness(90%) contrast(90%);
+
+
+}
+
+.profile-card {
+  border: 3px solid #AB7E4C;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  line-height: 1.6; /* Add line spacing */
+  color: #4B3E32;
+}
+
+.profile-content p {
+  text-align: justify;
+}
+
+/* Make sure the square and profile card are always beside each other */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: row; /* Ensure items stay adjacent even on small screens */
+    gap: 10px; /* Further reduce the gap */
+  }
+
+  .profile-image {
+      width: 120px; /* Further reduce image size */
+      height: 120px;
+  }
+
+  .square {
+      width: 100px; /* Adjust square size */
+      height: 100px;
+  }
+
+  .profile-card {
+    padding: 10px; /* Further adjust padding */
+  }
+
+  .profile-content {
+    font-size: 12px; /* Further reduce text size */
+    line-height: 1.2;
+  }
+
+  /* Display only the first sentence and hide the rest */
+  .profile-content p {
+      display: none;
+  }
+
+  .profile-content::before {
+      content: "I hold a Bachelor of Engineering degree in Electronics and Communication Engineering from Alva's Institute of Engineering and Technology, where I graduated with a CGPA of 7.25.";
+      display: block;
+  }
+}
+
+/* Additional styles for screens less than or equal to 360px */
+@media (max-width: 360px) {
+  .profile-container {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px;
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .profile-image {
+      width: 100px; /* Reduce image size */
+      height: 100px;
+  }
+
+  .square {
+      width: 80px; /* Further adjust square size */
+      height: 80px;
+  }
+
+  .profile-card {
+    padding: 10px; /* Further reduce padding */
+    font-size: 11px; /* Adjust font size */
+    line-height: 1.4; /* Adjust line height for better readability */
+  }
+
+  .profile-content::before {
+      font-size: 11px; /* Adjust font size */
+  }
+}

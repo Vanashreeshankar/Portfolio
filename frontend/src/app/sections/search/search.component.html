@@ -1,0 +1,35 @@
+<div *ngIf="!isChatOpen" class="chatbot-icon-container" (click)="toggleChat()">
+  <div class="chatbot-icon">
+    <img src="assets/avthar11.png" alt="Chatbot">
+  </div>
+</div>
+
+<div *ngIf="isChatOpen" class="chatbot-container">
+  <div class="chatbot-header">
+    <div class="chatbot-header-info">
+      <img src="assets/avthar11.png" alt="User Icon" class="user-icon">
+      <div class="chatbot-title">
+        <h4>VS</h4>
+        <p>I'm VS, Your Virtual Assistant!</p>
+      </div>
+    </div>
+    <button mat-icon-button (click)="toggleChat()" aria-label="Close chat">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="chatbot-body">
+    <div *ngFor="let message of messages" class="message" [ngClass]="{'bot-message': message.isBot, 'user-message': !message.isBot}">
+      <span>{{ message.text }}</span>
+    </div>
+  </div>
+
+  <div class="chatbot-footer">
+    <mat-form-field appearance="outline" class="input-field">
+      <input matInput placeholder="Message..." [(ngModel)]="userInput" (keyup.enter)="handleInput()">
+    </mat-form-field>
+    <button mat-icon-button (click)="handleInput()" aria-label="Send">
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</div>

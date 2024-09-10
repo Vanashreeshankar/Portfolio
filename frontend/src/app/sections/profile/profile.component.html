@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="profile-section">
+    <!-- Left-side Section -->
+    <div class="left-side">
+      <div class="profile-text">
+        <h1>Hello, I'm Vanashree</h1>
+        <h1>I'm {{ currentRole }}</h1>
+        <hr>
+        <p>Crafting seamless user experiences through innovative and dynamic web solutions.</p>
+      </div>
+    </div>
+
+    <!-- Center Section (Profile Image) -->
+    <div class="center">
+      <div class="profile-image">
+        <div class="square front">
+          <img src="assets/vana_profile.jpg" alt="Profile Image" class="image">
+        </div>
+        <div class="square bottom">
+          <div class="pattern"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right-side Section (Quote and Blog Link) -->
+    <div class="right-side" [class.show]="showRightSide">
+      <div class="quote">
+        <p> I'm passionate about creating websites that blend functionality, visual appeal, and seamless usability. Through various personal projects, I've developed a strong foundation in web development and am constantly expanding my knowledge of different technologies. I'm always eager to learn and take on new challenges, continuously seeking opportunities to grow and improve my skills. While my experience comes from hands-on practice and self-driven projects, I'm excited to bring my dedication and creativity to new ventures.</p>
+      
+      </div>
+    </div>
+
+    <!-- Arrow Key for Small Screens -->
+    <div class="arrow-key" (click)="toggleRightSide()">
+      <img src="assets/logo/down-arrow-svgrepo-com.svg" alt="Down arrow Image" class="image">
+    </div>
+    
+ 
+  </div>
+</div>

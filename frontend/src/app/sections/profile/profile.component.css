@@ -1,0 +1,428 @@
+/* General styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  height: 100vh;
+  background-color: #C49E78;
+  box-sizing: border-box;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80%;
+  max-width: 1200px;
+  position: relative;
+  gap: 20px;
+}
+
+.left-side,
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.left-side {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.right-side {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.profile-text h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.profile-text hr {
+  border: 1px solid #ffffff;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.profile-text p {
+  margin-top: 10px;
+  color: #fef5ef;
+  text-align: left;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  animation: flip 10s infinite;
+  flex: 0.5;
+}
+
+.profile-image {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.square {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+}
+
+.front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  border: 2px solid #ffffff;
+}
+
+.bottom {
+  top: 50px;
+  left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.pattern {
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(#8B572A 2px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quote p {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #ffffff;
+  text-align: justify;
+  margin: 0;
+  padding-left: 30px;
+  padding-right: 20px;
+  position: relative;
+}
+
+.quote p::before,
+.quote p::after {
+  content: "“";
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.quote p::before {
+  position: absolute;
+  left: 0;
+  top: -40px;
+}
+
+.quote p::after {
+  content: "”";
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+}
+
+.arrow-key {
+  cursor: pointer;
+  margin: 20px 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  bottom: 10px;
+  display: none;
+}
+
+.arrow-key img {
+  width: 100%;
+  height: auto;
+  transform: rotate(0deg);
+  filter: invert(1);
+  transition: transform 0.3s ease-in-out;
+  animation: moveDown 1.5s infinite ease-in-out;
+}
+
+.right-side.show ~ .arrow-key img {
+  transform: rotate(180deg);
+  animation: moveUp 1.5s infinite ease-in-out;
+}
+
+/* Large screens */
+@media screen and (min-width: 1024px) {
+  .container {
+      padding-top: 80px;
+  }
+
+  .profile-section {
+      flex-direction: row;
+  }
+
+  .center {
+      padding: 0 40px;
+      flex: 0.6;
+  }
+
+  .arrow-key {
+      display: none;
+  }
+}
+
+/* Medium screens */
+@media screen and (max-width: 1024px) {
+  .container {
+      padding-top: 60px;
+  }
+
+  .profile-section {
+      flex-direction: row;
+  }
+
+  .center {
+      padding: 0 20px;
+      flex: 0.8;
+  }
+
+  .arrow-key {
+      display: none;
+  }
+}
+
+/* Small screens */
+@media screen and (max-width: 768px) {
+  .profile-section {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .center {
+      order: 1;
+      padding: 20px;
+      margin-top: 10px;
+  }
+
+  .profile-image {
+      width: 200px;
+      height: 200px;
+  }
+
+  .left-side {
+      order: 2;
+      text-align: center;
+      padding: 10px;
+  }
+
+  .profile-text h1 {
+      font-size: 1.5em;
+  }
+
+  .profile-text hr,
+  .profile-text p {
+      display: none;
+  }
+
+
+  .arrow-key {
+      display: flex;
+  }
+
+  .right-side {
+      order: 3;
+      display: none;
+  }
+
+  .right-side.show {
+      display: block;
+  }
+}
+
+
+/* Extra small screens */
+@media screen and (max-width: 480px) {
+  .profile-section {
+      flex-direction: column;
+  }
+
+  .left-side {
+      order: 2;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px; /* Add margin to push down the left-side content */
+  }
+
+  .center {
+      order: 1;
+      padding: 0 20px;
+      margin-top: 30px;
+      transition: margin-top 0.3s ease-in-out;
+  }
+
+  .profile-image {
+      width: 150px;
+      height: 150px;
+  }
+
+  .quote p {
+      font-size: 1em;
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  /* Move center upwards when right-side is shown */
+  .right-side.show ~ .center {
+      margin-top: 0; /* Keep it neutral when right-side is shown */
+  }
+
+  .right-side.show ~ .left-side {
+      margin-top: 50px; /* Push left-side further down to avoid overlap */
+  }
+}
+
+/* Extra small screens */
+
+@media screen and (max-width: 393px) {
+  .container {
+      padding-top: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+
+  .profile-section {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+  }
+
+  .left-side {
+      order: 2;
+      text-align: center;
+      padding: 5px;
+  }
+
+  .center {
+      order: 1;
+      margin-top: 5px;
+      width: 90%; /* Initial width */
+      padding: 10px;
+      transition: margin-top 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+  }
+
+  .profile-image {
+      width: 150px !important; /* Larger initial profile image */
+      height: 150px !important;
+      transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+  }
+
+  .square {
+      width: 130px !important; /* Larger initial squares */
+      height: 130px !important;
+      transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+  }
+
+  .bottom {
+    top: 30px;
+    left: 30px;
+  }
+
+  .pattern {
+      width: 130px !important;
+      height: 130px !important;
+      background-size: 6px 6px;
+  }
+
+  .quote p {
+      font-size: 0.9em;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+
+  /* When right-side is shown, slightly reduce the size of center */
+  .right-side.show ~ .center {
+      margin-top: -20px;
+      width: 80%; /* Slightly reduced width */
+      height: auto; /* Adjust height if needed */
+  }
+
+  .right-side.show ~ .center .profile-image {
+      width: 120px !important; /* Larger profile image */
+      height: 120px !important;
+  }
+
+  .right-side.show ~ .center .square {
+      width: 100px !important; /* Slightly smaller squares */
+      height: 100px !important;
+  }
+
+  .right-side.show ~ .center .pattern {
+      width: 100px !important; /* Slightly smaller pattern */
+      height: 100px !important;
+  }
+}
+
+
+
+/* Very small screens */
+@media screen and (max-width: 280px) {
+  .container {
+      padding-top: 40px;
+  }
+
+  .center {
+      margin-top: 5px;
+      transition: margin-top 0.3s ease-in-out;
+  }
+
+  .profile-image {
+      width: 100px;
+      height: 100px;
+  }
+
+  .square {
+      width: 100px;
+      height: 100px;
+  }
+
+  .bottom {
+    top: 30px;
+    left: 30px;
+  }
+
+  .pattern {
+      width: 100px;
+      height: 100px;
+      background-size: 5px 5px;
+  }
+
+  .quote p {
+      font-size: 0.75em;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+
+  /* Move center upwards when right-side is shown */
+  .right-side.show ~ .center {
+      margin-top: -20px; /* Adjust this value as needed */
+  }
+}

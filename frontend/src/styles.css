@@ -1,0 +1,15 @@
+html, body {
+    overflow-y: scroll;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 0; /* Hide the scrollbar */
+  }
+  
+  app-root {
+    height: 100%;
+  }
+  

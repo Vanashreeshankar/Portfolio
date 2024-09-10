@@ -1,0 +1,18 @@
+.footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  background-color: #b99a72; /* Match the background color #8B4513 */
+  color: white; /* Set the text color to white */
+}
+
+.footer p {
+  margin: 0; /* Remove default margin */
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+      font-size: 12px;
+      padding: 8px;
+  }
+}

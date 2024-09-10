@@ -1,0 +1,253 @@
+.content {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  background-color: #DABC94; /* Background color */
+}
+
+/* Videos Section */
+.videos-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.video-card {
+  background-color: #FFF8E7; /* White background for contrast */
+  border: 2px solid #8B4513;
+  max-width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-card:hover {
+  transform: scale(1.05) ; /* Slightly enlarge the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* More pronounced shadow on hover */
+}
+
+.video-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Video container with flex 1 to occupy half the space */
+.video-container {
+  flex: 1;
+  max-width: 400px;
+}
+
+video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Video details container with flex 1 for text beside the video */
+.video-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #8B4513 !important; /* Brown color for titles */
+}
+
+.video-description {
+  font-size: 1em;
+  color: #5C4033; /* Brown color for descriptions */
+  line-height: 1.6;
+}
+
+.video-links {
+  margin-top: 10px;
+}
+
+.video-link {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 1em;
+  color: #8B4513 ; /* A darker brown for links */
+  text-decoration: none;
+}
+
+.video-link:hover {
+  text-decoration: underline;
+}
+
+/* Centering the projects-section container */
+.projects-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Horizontally center the container */
+}
+
+/* Existing Projects Section Styles */
+.projects-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1200px; /* You can adjust the max-width to fit your design */
+  text-align: center; /* Optional: Center the text inside the section */
+}
+
+.project-card {
+  background-color: #FFF8E7;
+  border: 2px solid #8B4513;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* More pronounced shadow on hover */
+}
+
+.project-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #8B4513 !important;
+}
+
+.project-description {
+  font-size: 1em;
+  color: #5C4033;
+  line-height: 1.6;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1em;
+  color: #8B4513;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .video-row {
+    flex-direction: column; /* Stack the video and description on smaller screens */
+    align-items: center;
+    text-align: center;
+  }
+
+  .video-container {
+    width: 100%;
+  }
+
+  .video-details {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .video-title {
+    text-align: center;
+  }
+
+  .video-description {
+    margin-top: 10px;
+    text-align: start;
+  }
+}
+
+@media (min-width: 769px) {
+  .video-row {
+    flex-direction: row; /* Keep the video and description side by side on larger screens */
+    align-items: flex-start; /* Align items at the top */
+  }
+
+  .video-container,
+  .video-details {
+    flex: 1; /* Each takes up equal space */
+  }
+
+  .video-description {
+    margin-top: 0;
+  }
+}
+
+/* Projects Section */
+.projects-section {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #FFF8E7; /* White background for the project cards */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #5C4033; /* Brown color for project titles */
+}
+
+.project-description {
+  font-size: 1em;
+  color: #5C4033; /* Brown color for project descriptions */
+  line-height: 1.6;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1em;
+  color: #8B4513; /* Darker brown for project links */
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 280px) {
+  .project-card {
+    padding: 10px;
+    font-size: 0.9em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid #8B4513;
+    border-radius: 5px;
+  }
+
+  .project-title {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+
+  .project-description {
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+
+  .project-link {
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+
+  .projects-section {
+    grid-template-columns: 1fr; /* Make each project card take full width */
+    gap: 10px;
+  }
+}

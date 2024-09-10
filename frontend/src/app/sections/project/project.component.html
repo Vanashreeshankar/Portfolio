@@ -1,0 +1,30 @@
+<div class="content">
+  <!-- Videos Section -->
+  <div class="videos-section">
+    <mat-card *ngFor="let video of videos" class="video-card">
+      <div class="video-row">
+        <div class="video-container">
+          <video [src]="video.src" controls></video>
+        </div>
+        <div class="video-details">
+          <h2 class="video-title">{{ video.title }}</h2>
+          <p class="video-description">{{ video.description }}</p>
+          <div class="video-links" *ngIf="video.links?.length">
+            <a *ngFor="let link of video.links" [href]="link.url" target="_blank" class="video-link">{{ link.text }}</a>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- Projects Section -->
+  <div class="projects-section-container">
+    <div class="projects-section">
+      <mat-card *ngFor="let project of projects" class="project-card">
+        <h3 class="project-title">{{ project.name }}</h3>
+        <p class="project-description">{{ project.description }}</p>
+        <a [href]="project.link" target="_blank" class="project-link">Learn More</a>
+      </mat-card>
+    </div>
+  </div>
+</div>
