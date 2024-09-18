@@ -12,8 +12,8 @@ import { MaterialModule } from '../../material/material.module';
 export class ProjectComponent {
   videos = [
     { title:'CRM Application', src: 'assets/crm.mp4', description: 'This CRM application, built with the MEAN stack, features comprehensive CRUD functionality for both users and admins. In addition to standard data management, the application allows seamless communication between users and admins through a built-in messaging system. Admins can manage messages directly from a dedicated panel, ensuring efficient oversight. For a full demonstration of the application capabilities, you can check out the demo.',
-     links: [{ url: 'https://mean-crm-frontend.vercel.app/', text: 'Demo'},
-      {url: 'https://github.com/Vanashreeshankar/MEAN-CRM-WEB', text: 'Learn More'}
+     links: [{ url: 'https://crm-frontend-website.vercel.app', text: 'Demo'},
+      {url: 'https://github.com/Vanashreeshankar/MEAN-CRM-Website', text: 'Learn More'}
     ] 
     },
     { title:'Blog Website', src: 'assets/video2.mp4', description: 'This responsive blog website, built with HTML, CSS, and JavaScript, offers various blog categories for users to explore. Users can also contribute their own content and easily get in touch through the site.', links:[] },
