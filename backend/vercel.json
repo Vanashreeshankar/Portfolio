@@ -1,6 +1,13 @@
 {
-    "version": 2,
-    "builds":[{"src":"./*.js", "use":"@vercel/node" }],
-    "routes":[{"src":"/(.*)", "dest":"/", "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]}]
-    
+  "version": 2,
+  "routes": [
+    {
+      "src": "/api/(.*)", // Match all API routes
+      "headers": {
+        "Access-Control-Allow-Origin": "https://vanashree-portfolio-website.vercel.app/", // Your frontend domain
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization"
+      }
+    }
+  ]
 }
