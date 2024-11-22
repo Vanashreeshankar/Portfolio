@@ -16,6 +16,14 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+route.get('/', (req, res) => {
+  res.status(200).send({
+    message: 'Welcome to the Portfolio Server API!',
+    status: 'Running',
+  });
+});
+
+
 router.post('/query', async (req, res) => {
   const { name, email, subject, message } = req.body;
 
