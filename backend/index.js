@@ -22,19 +22,13 @@ app.use(bodyParser.json());
 
 app.use('/contact', contactRoute);
 
+app.options('*', cors());
+
 app.use("*", (req, res, next) => {
     const error = new Error("Not found");
     error.status = 404;
     next(error);
 });
-
-app.get('/', (req, res) => {
-  res.status(200).send({
-    message: 'Welcome to the Portfolio Server API!',
-    status: 'Running',
-  });
-});
-
 
 app.use((error, req, res, next) => {
     res.status(error.status || 500);
