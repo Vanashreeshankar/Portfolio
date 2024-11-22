@@ -22,8 +22,6 @@ app.use(bodyParser.json());
 
 app.use('/contact', contactRoute);
 
-app.options('*', cors());
-
 app.use("*", (req, res, next) => {
     const error = new Error("Not found");
     error.status = 404;
