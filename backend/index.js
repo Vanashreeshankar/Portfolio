@@ -28,6 +28,14 @@ app.use("*", (req, res, next) => {
     next(error);
 });
 
+app.get('/', (req, res) => {
+  res.status(200).send({
+    message: 'Welcome to the Portfolio Server API!',
+    status: 'Running',
+  });
+});
+
+
 app.use((error, req, res, next) => {
     res.status(error.status || 500);
     res.json({
