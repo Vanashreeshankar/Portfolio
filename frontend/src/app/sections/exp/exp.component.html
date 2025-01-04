@@ -1,0 +1,21 @@
+<div class="exp-container" id="exp-container">
+  <div 
+    class="card" 
+    *ngFor="let card of cards; let i = index" 
+    [ngClass]="{'card1': i === 0, 'card2': i === 1}"
+  >
+    <!-- Left: SVG -->
+    <div class="card-svg">
+      <img [src]="card.svgPath" [alt]="card.title + ' Logo'" />
+    </div>
+
+    <!-- Right: Title and Content -->
+    <div class="card-content">
+      <h2>{{ card.title }}</h2>
+      
+      <ul>
+        <li *ngFor="let point of card.content">{{ point }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
