@@ -54,6 +54,10 @@ export class SearchComponent {
         this.scrollToSection('qualification');
         response = 'B.E for more info look into Qualification section';
         break;
+         case /work|experience|accomplished|certification|professional background/.test(input):
+          this.scrollToSection('work');
+          response = 'Freelance experience in prompt writing, user testing, and hands-on MEAN stack web development. Details in the work section.';
+          break;
       case /skills|abilities|competence|expertise/.test(input):
         this.scrollToSection('skills');
         response = 'Navigating to the skills section...';
