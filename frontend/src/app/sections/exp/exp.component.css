@@ -35,7 +35,7 @@
   align-items: center;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  background-color: #F5E5D3; /* Subtle background for SVG container */
+  background-color: #EED5B7; /* Subtle background for SVG container */
   border-right: 2px solid #8B4513; /* Dividing line */
 }
 
@@ -152,7 +152,7 @@
     border-bottom-left-radius: 10px;
     border-right: none; /* Remove the dividing line */
     padding: 0.5rem; /* Add some padding around the image */
-    background-color: #F5E5D3; /* Same background for the SVG section */
+    background-color: #EED5B7; /* Same background for the SVG section */
   }
 
   .card-svg img {
@@ -249,7 +249,7 @@
     padding: 0; /* Remove extra padding */
     border-right: none; /* Remove the dividing line */
     border-bottom: 2px solid #8B4513; /* Add a dividing line below the image */
-    background-color: #F5E5D3;
+    background-color: #EED5B7;
   }
 
   .card-svg img {
@@ -305,7 +305,7 @@
     padding: 0; /* Remove extra padding */
     border-right: none; /* Remove the right border */
     border-bottom: 1px solid #8B4513; /* Add a thinner dividing line below */
-    background-color: #F5E5D3; /* Keep consistent background */
+    background-color: #EED5B7; /* Keep consistent background */
   }
 
   .card-svg img {
@@ -365,7 +365,7 @@
     padding: 0; /* Remove extra padding */
     border-right: none; /* No right border */
     border-bottom: 1px solid #8B4513; /* Add a thinner dividing line below */
-    background-color: #F5E5D3; /* Consistent background */
+    background-color: #EED5B7; /* Consistent background */
   }
 
   .card-svg img {
@@ -418,7 +418,7 @@
     padding: 0; /* Remove padding */
     border-right: none; /* Remove right border */
     border-bottom: 1px solid #8B4513; /* Add a thinner dividing line below */
-    background-color: #F5E5D3; /* Consistent background color */
+    background-color: #EED5B7; /* Consistent background color */
   }
 
   .card-svg img {
@@ -446,4 +446,3 @@
     padding-left: 0.6rem; /* Reduced indentation */
   }
 }
-
