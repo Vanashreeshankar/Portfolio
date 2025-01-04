@@ -10,6 +10,7 @@ import { HeaderComponent } from './sections/header/header.component';
 import { ProfileComponent } from './sections/profile/profile.component';
 import { ProjectComponent } from './sections/project/project.component';
 import { QualComponent } from './sections/qual/qual.component';
+import { ExpComponent } from './sections/exp/exp.component'; 
 import { SkillsComponent } from './sections/skills/skills.component';
 import { SearchComponent } from './sections/search/search.component';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
@@ -30,6 +31,7 @@ import { FooterComponent } from './sections/footer/footer.component';
     ProfileComponent,
     ProjectComponent,
     QualComponent,
+     ExpComponent,
     SkillsComponent,
     SearchComponent,
    MatDialogModule,
