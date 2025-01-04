@@ -32,6 +32,7 @@ export class SkillsComponent {
   microSoftSkills = [
     { name: 'PowerPoint', description: 'I design compelling presentations that effectively communicate key messages and captivate audiences', svgPath: 'assets/logo/microsoft-powerpoint.svg' },
     { name: 'MS Word', description: 'I leverage my expertise in MS Word to produce polished, professional documents efficiently', svgPath: 'assets/logo/microsoft-word.svg' }
+    { name: 'MS Excel', description: 'I possess a strong command over Excel, transforming data into actionable insights', svgPath: 'assets/logo/excel.svg' }
     // Add more Microsoft skills as needed
   ];
   
