@@ -16,7 +16,8 @@ export class ProjectComponent {
       {url: 'https://github.com/Vanashreeshankar/MEAN-CRM-Website', text: 'Learn More'}
     ] 
     },
-    { title:'Blog Website', src: 'assets/video2.mp4', description: 'This responsive blog website, built with HTML, CSS, and JavaScript, offers various blog categories for users to explore. Users can also contribute their own content and easily get in touch through the site.', links:[] },
+    { title:'Visual Node Pipeline Builder', src: 'assets/screenrec.mp4', description: 'Developed an interactive workflow builder that allows users to create and manage data pipelines using a visual node-based interface. Implemented dynamic node linking, real-time state updates, and a modular architecture to ensure scalability and ease of use. This project demonstrates strong frontend logic, state management, and user-centric design principles.',
+     links:[{url: 'https://github.com/Vanashreeshankar/visual-node-pipeline-builder', text: 'Learn More'}] },
     // Add more videos as needed
   ];
 
